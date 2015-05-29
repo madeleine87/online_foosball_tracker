@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :matches
+  resources :players
   root to: 'matches#index'
   devise_for :players
 
