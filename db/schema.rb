@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529114158) do
+ActiveRecord::Schema.define(version: 20150529142135) do
 
   create_table "matches", force: :cascade do |t|
     t.datetime "date"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20150529114158) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "players", ["email"], name: "index_players_on_email", unique: true
