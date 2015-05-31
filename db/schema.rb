@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529210123) do
+ActiveRecord::Schema.define(version: 20150531211131) do
 
   create_table "matches", force: :cascade do |t|
     t.datetime "date"
-    t.integer  "resultA"
-    t.integer  "resultB"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "player_id"
+    t.integer  "result_player_A"
+    t.integer  "result_player_B"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "player_A_id"
+    t.integer  "player_B_id"
   end
 
   create_table "players", force: :cascade do |t|
