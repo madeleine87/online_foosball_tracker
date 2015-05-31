@@ -7,12 +7,16 @@
 
 <p>
   <strong>Result A:</strong>
-  <%= @match.resultA %>
+  <%= @match.result_player_A %>
 </p>
 
 <p>
   <strong>Result B:</strong>
-  <%= @match.resultB %>
+  <%= @match.result_player_B %>
+</p>
+<p>
+  <strong>Result Player A:</strong>
+  <%= @match.player_A.first_name %>
 </p>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |

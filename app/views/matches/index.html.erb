@@ -16,8 +16,10 @@
     <% @matches.each do |match| %>
       <tr>
         <td><%= match.date %></td>
-        <td><%= match.resultA %></td>
-        <td><%= match.resultB %></td>
+        <td><%= match.result_player_A %></td>
+        <td><%= match.result_player_B %></td>
+        <td><%= match.player_A.first_name unless match.player_A == nil %></td>
+        <td><%= match.player_B.first_name unless match.player_B == nil %></td>
         <td><%= link_to 'Show', match %></td>
         <td><%= link_to 'Edit', edit_match_path(match) %></td>
         <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
