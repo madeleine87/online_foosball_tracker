@@ -1,4 +1,28 @@
 <p id="notice"><%= notice %></p>
+<h1>Player</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+		<p>First name:
+			<%= @player.first_name %></p>
+		<p>Last name:
+			<%= @player.last_name %></p>
+		<p>Email:
+			<%= @player.email %></p>
+		</div>
+		<div class="col-md-6">
+		<%= image_tag(@player.photo_url) if @player.photo? %>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>
