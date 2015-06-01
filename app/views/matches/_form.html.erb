@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :player_A_id %><br>
-    <%= f.number_field :player_A_id %>
+    <%= f.select :player_A_id, Player.all.collect { |p| [ p.first_name, p.id ] }, {include_blank: false}, {:class => "form-control"} %>
   </div>
   <div class="field">
     <%= f.label :player_B_id %><br>
-    <%= f.number_field :player_B_id %>
+    <%= f.select :player_B_id, Player.all.collect { |p| [ p.first_name, p.id ] }, {include_blank: false}, {:class => "form-control"} %>
   </div>
   <div class="actions">
     <%= f.submit %>
