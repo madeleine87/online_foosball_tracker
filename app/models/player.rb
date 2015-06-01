@@ -1,7 +1,15 @@
 class Player < ActiveRecord::Base
 
-  def self.players_matches
+  def players_matches
     Match.where("player_A_id = ? OR player_B_id = ?", self.id, self.id)
+  end
+
+  def matches_won
+    Match.where("(player_A_id = ? and result_player_A = 10) OR (player_B_id = ? and result_player_B = 10)", self.id, self.id)
+  end
+
+  def matches_lost
+    Match.where("(player_A_id = ? and result_player_A < 10) OR (player_B_id = ? and result_player_B < 10)", self.id, self.id)
   end
 
 	mount_uploader :photo, AvatarUploader

@@ -10,6 +10,12 @@
 			<%= @player.last_name %></p>
 		<p>Email:
 			<%= @player.email %></p>
+		<p>Number of matches:
+			<%= @player.players_matches.count %></p>
+		<p>Number of matches won:
+			<%= @player.matches_won.count %></p>
+		<p>Number of matches lost:
+			<%= @player.matches_lost.count %></p>
 
 		<p>List of player's matches:</p>
 			<table class="table">
@@ -24,7 +30,7 @@
 			  </thead>
 
 			  <tbody>
-			    <% @players_matches.each do |match| %>
+			    <% @player.players_matches.each do |match| %>
 			      <tr>
 			        <td><%= match.date %></td>
 			        <td><%= match.player_A.first_name unless match.player_A == nil %></td>
