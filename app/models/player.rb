@@ -1,5 +1,9 @@
 class Player < ActiveRecord::Base
 
+  def self.players_matches
+    Match.where("player_A_id = ? OR player_B_id = ?", self.id, self.id)
+  end
+
 	mount_uploader :photo, AvatarUploader
 
 	def avatar=(obj)
@@ -12,6 +16,9 @@ class Player < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :matches
+
+  has_many :matches, class_name: "Match"
+
   validates_presence_of :first_name, :email
+
 end
