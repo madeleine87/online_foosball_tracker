@@ -19,7 +19,7 @@
         <td><%= player.last_name %></td>
         <td><%= player.email %></td>
         <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
+        <td><%= link_to 'Edit', edit_player_registration_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Player', new_player_path, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Sign up', new_player_registration_path, class: "btn btn-primary btn-sm" %>

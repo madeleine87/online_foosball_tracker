@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   resources :matches
-
-  devise_for :players
+  devise_for :players, :controllers => { registrations: 'players/registrations' }
   resources :players
 
 
