@@ -1,0 +1,63 @@
+p#notice
+= notice
+h1
+	| Player
+
+div.container
+	div.row
+		div.col-md-7
+			p
+				| First name:&nbsp;
+				= @player.first_name
+			p
+				| Last name:&nbsp;
+				= @player.last_name
+			p
+				| Email:&nbsp;
+				= @player.email
+			p
+				| Number of matches:&nbsp;
+				= @player.players_matches.count
+			p
+				| Number of matches won:&nbsp;
+				= @player.matches_won.count
+			p
+				| Number of matches lost:&nbsp;
+				= @player.matches_lost.count
+
+			p
+				| List of player's matches:&nbsp;
+			table.table.table-striped
+			  thead
+			    tr
+			      th Date
+			      th Player A
+			      th Player B
+			      th Result A
+			      th Result B
+
+			  tbody
+			    - @player.players_matches.each do |match|
+			      tr
+			        td = match.date
+			        td = match.player_A.first_name unless match.player_A == nil
+			        td = match.player_B.first_name unless match.player_B == nil
+			        td = match.result_player_A
+			        td = match.result_player_B
+
+		div.col-md-5
+		= image_tag(@player.photo_url) if @player.photo?
+
+	<!-- <div class="row">
+		<div class="col-md-10">
+
+		</div>
+	</div> -->
+
+
+
+
+
+
+
+= link_to 'Back', players_path

@@ -1,0 +1,32 @@
+p#notice
+= notice
+
+p
+  strong
+    | Date:&nbsp;
+    = @match.date
+
+p
+  strong
+    | Player A:&nbsp;
+    = @match.player_A.first_name
+
+p
+  strong
+    | Player B:&nbsp;
+    = @match.player_B.first_name
+
+p
+  strong
+    | Result A:&nbsp;
+    = @match.result_player_A
+
+p
+  strong
+    |Result B:&nbsp;
+    = @match.result_player_B
+
+
+= link_to 'Edit', edit_match_path(@match)
+|&nbsp; &#124; &nbsp;
+= link_to 'Back', matches_path
