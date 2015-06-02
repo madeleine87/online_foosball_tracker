@@ -1,0 +1,38 @@
+= form_for @match, :html => {:class => "form-horizontal"} do |f|
+  = if @match.errors.any?
+    error_explanation
+    h2
+      = pluralize(@match.errors.count, "error")
+        prohibited this match from being saved:
+    ul
+      = @match.errors.full_messages.each do |message|
+        li
+          = message
+
+  .form-group
+    = f.label :date, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.datetime_select :date, class: "form-control"
+
+  .form-group
+    = f.label :result_player_A, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :result_player_A, class: "form-control"
+
+  .form-group
+    = f.label :result_player_B, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :result_player_B, class: "form-control"
+
+  .form-group
+    = f.label :player_A_id, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.select :player_A_id, Player.all.collect { |p| [ p.first_name, p.id ] }, {include_blank: false}, {:class => "form-control"}
+
+  .form-group
+    = f.label :player_B_id, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.select :player_B_id, Player.all.collect { |p| [ p.first_name, p.id ] }, {include_blank: false}, {:class => "form-control"}
+
+  .col-sm-offset-2.col-sm-10
+    = f.submit class: "btn btn-default"

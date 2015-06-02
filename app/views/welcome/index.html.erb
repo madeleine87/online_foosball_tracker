@@ -1,8 +1,8 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-6">
-			<h1>Welcome to Online Foosball Tracker</h1>
-			<h3>Steer your team and score goals!</h3>
+		<div class="col-md-6 well well-lg">
+			<h1>Welcome to</br>Online Foosball Tracker</h1>
+			<p class="lead">Steer your team and score goals!</p>
 		</div>
 		<div class="col-md-6">
 			<img src="../assets/foosball-table.jpg">
@@ -17,6 +17,8 @@
 				      <th>First name</th>
 				      <th>Last name</th>
 				      <th>Email</th>
+				      <th>Matches won</th>
+
 				    </tr>
 				  </thead>
 
@@ -26,6 +28,7 @@
 				        <td><%= player.first_name %></td>
 				        <td><%= player.last_name %></td>
 				        <td><%= player.email %></td>
+				        <td><%= player.matches_won.count %></td>
 				      </tr>
 				    <% end %>
 				  </tbody>
