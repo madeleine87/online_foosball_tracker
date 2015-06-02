@@ -1,0 +1,22 @@
+h1
+  | Listing rankings
+div.container
+  div.row
+    div.col-md-12
+      h3
+        | Top Five Players
+      table.table
+        thead
+          tr
+            th First name
+            th Last name
+            th Email
+            th Matches won
+
+        tbody
+          - @players.each do |player|
+            tr
+              td = player.first_name
+              td = player.last_name
+              td = player.email
+              td = player.matches_won.count
