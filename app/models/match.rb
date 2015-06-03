@@ -9,6 +9,9 @@ class Match < ActiveRecord::Base
   validate :result_10
   validate :result_draw
 
+  validate :the_same_player
+
+
   private
   def result_10
   	if(result_player_A != 10 && result_player_B != 10)
@@ -20,5 +23,11 @@ class Match < ActiveRecord::Base
   	if (result_player_A == 10 && result_player_B == 10)
   		errors.add(:base, "Two players can't have 10 points")
   	end
+  end
+
+  def the_same_player
+    if (player_A == player_B)
+      errors.add(:base, "Player A and Player B can't be the same player!")
+    end
   end
 end

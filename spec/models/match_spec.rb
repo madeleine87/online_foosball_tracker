@@ -38,3 +38,12 @@ RSpec.describe Match, type: :model do
   	expect(match.valid?).to be true
 	end
 end
+
+RSpec.describe Match, type: :model do
+  it "Player A and Player B can't be the same player" do
+    player = FactoryGirl.build(:player_A)
+    match = FactoryGirl.build(:match_A, player_A: player, player_B: player)
+
+    expect(match.valid?).to be false
+  end
+end
