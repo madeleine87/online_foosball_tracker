@@ -27,6 +27,8 @@ class Player < ActiveRecord::Base
 
   has_many :matches, class_name: "Match"
 
-  validates_presence_of :first_name, :email
+  validates :first_name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
 
 end
