@@ -32,7 +32,7 @@ RSpec.describe Match, type: :model do
 end
 
 RSpec.describe Match, type: :model do
-  it "The propor match" do
+  it "The proper match" do
   	match = FactoryGirl.build(:match_A)
 
   	expect(match.valid?).to be true
