@@ -14,11 +14,7 @@ class Player < ActiveRecord::Base
 
 	mount_uploader :photo, AvatarUploader
 
-	def avatar=(obj)
-    super(obj)
-    # Put your callbacks here, e.g.
-    self.moderated = false
-  end
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
