@@ -21,10 +21,10 @@ div.container
           - @matches.each do |match|
             tr
               td = match.date
-              td = match.player_A.first_name unless match.player_A == nil
-              td = match.player_B.first_name unless match.player_B == nil
-              td = match.result_player_A
-              td = match.result_player_B
+              / td = match.player_A.first_name unless match.player_A == nil
+              / td = match.player_B.first_name unless match.player_B == nil
+              / td = match.result_player_A
+              / td = match.result_player_B
               td = link_to 'Show', match
               td = link_to 'Edit', edit_match_path(match)
               td = link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' }
