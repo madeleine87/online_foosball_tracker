@@ -11,16 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150531211131) do
+ActiveRecord::Schema.define(version: 20150610211334) do
 
   create_table "matches", force: :cascade do |t|
     t.datetime "date"
-    t.integer  "result_player_A"
-    t.integer  "result_player_B"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "player_A_id"
-    t.integer  "player_B_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_in_matches", force: :cascade do |t|
+    t.integer  "player_id"
+    t.integer  "match_id"
+    t.boolean  "win"
+    t.integer  "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "players", force: :cascade do |t|
@@ -39,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150531211131) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "photo"
+    t.integer  "win"
   end
 
   add_index "players", ["email"], name: "index_players_on_email", unique: true
